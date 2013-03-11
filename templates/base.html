@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+	<title>{% block title %}foadnh.org{% endblock %}</title>
+	<meta charset="utf-8">
+	<meta name="description" content="{% block meta-description %}Foad Nosrati Habibi's Website.{% endblock %}" />
+	<meta name="keywords" content="{% block meta-keywords %}Foad, Nosrati, Habibi{% endblock %}" />
+	<meta name="author" content="Foad Nosrati Habibi" />
+	<meta name="robots" content="follow, all" />
+	{% block meta %}{% endblock %}
+	<link href="{{ STATIC_URL }}favicon.png" rel="shortcut icon" type="image/png" />
+	{% block stylesheets %}<link rel="stylesheet" href="{{ STATIC_URL }}style.css" />{% endblock %}
+	<link rel="pingback" href="/xmlrpc/" />
+	{% block link %}{% endblock %}
+</head>
+
+<body>
+	<div id="logo">
+		<header id="header" role="banner">
+			<a href="/"><img src="{{ STATIC_URL }}logo.png" alt="foadnh.org" /></a>
+		</header>
+	</div>
+
+	<div id="sidebar">
+		<nav>
+<ul>
+	<li{% if path == '/' %} class="active"{% endif %}>
+		<a href="/">Home</a>
+	</li>
+	<li{% if path == '/about/' %} class="active"{% endif %}>
+		<a href="/about/">About</a>
+	</li>
+	<li class="big{% if object or object_list %} active{% endif %}">
+		<a href="/weblog/">Blog</a>
+	</li>
+<ul>
+		</nav>
+		{% block sidebar %}{% endblock %}
+		<h2>Freedom</h2>
+		<p>Feel free to hack everything in here.<br />
+		You can find source of this site from <a href="#">here</a>.</p>
+		<h2>Powered by</ h2>
+		<p><a href="http://www.python.org">Python</a>
+				, <a href="http://www.djangoproject.com/">Django</a>
+				{% block powered_by %}{% endblock %}
+	</div>
+	
+	<div id="content">
+		{% block content %}{% endblock %}
+	</div>
+</body>
+</html>

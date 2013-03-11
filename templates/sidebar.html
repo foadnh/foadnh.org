@@ -1,0 +1,21 @@
+{% load static %}
+<nav>
+	<ul>
+		<li{% if path == '/' %} class="active"{% endif %}>
+			<a href="/">Home</a>
+		</li>
+		<li{% if path == '/about/' %} class="active"{% endif %}>
+			<a href="/about/">About</a>
+		</li>
+		<li{% if '/weblog/' in path %} class="active"{% endif %}>
+			<a href="/weblog/">Blog</a>
+		</li>
+		<li{% if path == '/about/' %} class="active"{% endif %}>
+			<a href="/about/">About</a>
+		</li>
+	</ul>
+</nav>
+{% block sidebar2 %}{% endblock %}
+<h2>Freedom</h2>
+<p>Feel free to hack everything in here.</p>
+<p>You can find source of this site from <a href="#">here</a>.</p>
