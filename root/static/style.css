@@ -175,11 +175,7 @@ div#content {
 
 @font-face {
 	font-family: 'WebSymbolsRegular';
-	src: url('/static/websymbols/websymbols-regular-webfont.eot');
-	src: url('/static/websymbols/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
-	url('/static/websymbols/websymbols-regular-webfont.woff') format('woff'),
-	url('/static/websymbols/websymbols-regular-webfont.ttf') format('truetype'),
-	url('/static/websymbols/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
+	src: url('/static/font-websymbols.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }

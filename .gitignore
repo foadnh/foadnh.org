@@ -2,3 +2,7 @@
 *.pot
 *.pyc
 local_settings.py
+/manage.py
+/databases/
+*.swp
+/www/settings.py
