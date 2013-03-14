@@ -2,3 +2,6 @@ Hello,
 This is whole source of my website that you can find in foadnh.org.
 This sources have some codes that still aren't in foadnh.org.
 You can contact me from foad.nh@gmail.com.
+
+For Blog you need to have django-blog-zinnia and zinnia-theme-html5.
+You can easily install them with pip or easy_install.
