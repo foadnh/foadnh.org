@@ -203,10 +203,10 @@ div#content {
 }
 
 #home-menu li a {
-	display: block;
 	width: 100%;
 	height: 100%;
 	position: relative;
+	border: 0;
 /*	color: #333;*/
 }
 
@@ -246,8 +246,8 @@ div#content {
 	transition: all 300ms linear;
 }
 
-#home-menu li:hover,
-#home-menu li:hover a {
+#home-menu li:hover {
+/*	border-left: 0;*/
 	background: black;
 }
 
