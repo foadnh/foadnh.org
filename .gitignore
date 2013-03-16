@@ -6,3 +6,5 @@ local_settings.py
 /databases/
 *.swp
 /www/settings.py
+/static/admin/
+/static/zinnia/
