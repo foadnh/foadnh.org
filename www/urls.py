@@ -20,4 +20,8 @@ urlpatterns = patterns('',
 	# Zinnia
 	url(r'^blog/', include('zinnia.urls')),
 	url(r'^comments/', include('django.contrib.comments.urls')),
+
+	# SMS application
+	url(r'^sms/', 'sms.views.index'),
+	url(r'^sms/(?P<contact>\w+)/', 'sms.views.index'),
 )

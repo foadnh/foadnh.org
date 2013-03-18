@@ -5,3 +5,5 @@ You can contact me from foad.nh@gmail.com.
 
 For Blog you need to have django-blog-zinnia and zinnia-theme-html5.
 You can easily install them with pip or easy_install.
+
+For SMS application you need lxml package.

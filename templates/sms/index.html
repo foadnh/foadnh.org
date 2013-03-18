@@ -1,0 +1,46 @@
+{% extends 'sms/base.html' %}
+
+{% block title %}Messages between {{contact}} and Foad{% endblock %}
+{% if count != 0 %}
+{% block content %}
+	<div id="whole">
+	{% for sms in messages %}
+		{% if sms.type == '1' %}
+		<div id="sms" class="recive">
+			<div id="image" class="recive"><img src="{{ STATIC_URL }}sms/{{ contact }}.png" /></div>
+			<div id="main" class="recive">
+				<h3 id="names">{{ contact }}</h3>
+		{% else %}
+		<div id="sms" class="send">
+			<div id="image" class="send"><img src="{{ STATIC_URL }}sms/Foad.png" /></div>
+			<div id="main" class="send">
+				<h3 id="names">Foad</h3>
+		{% endif %}
+				<p>{{ sms.body }}</p>
+				<h6>{{ sms.date }}</h6>
+			</div>
+		</div>
+	{% endfor %}
+	</div>
+	<div id="info">
+		<p id="contactNames"><b>{{ contact }} - Foad</b></p>
+		<p>{{ count }} Messages</p>
+		<p>Show names:</p>
+		<div class="slideTwo">	
+			<input type="checkbox" value="None" id="slideTwo" name="check" checked="checked" />
+			<label for="slideTwo"></label>
+		</div>
+		<script>
+			function ClickFun() {
+				if ($("input:checked").length) {
+					$("h3").css("font-size", "19px");
+				} else {
+					$("h3").css("font-size", "0px");
+				}
+			}
+			$(":checkbox").click(ClickFun);
+		</script>
+		<a href="/accounts/logout/"><p><b>Logout</b></p></a>
+	</div>
+{% endblock %}
+{% endif %}

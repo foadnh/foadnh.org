@@ -8,3 +8,4 @@ local_settings.py
 /www/settings.py
 /static/admin/
 /static/zinnia/
+sms/sms.xml

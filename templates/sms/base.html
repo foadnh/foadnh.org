@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="{{ STATIC_URL }}sms/style.css" />
+	<title>{% block title %}Messages{% endblock %}</title>
+	<script src="{{ STATIC_URL }}sms/jquery.js"></script>
+</head>
+<body>
+	<div id="content">
+		{% block content %}<p>No messages!</p>{% endblock %}
+	</div>
+</body>
+</html>
