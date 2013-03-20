@@ -9,7 +9,7 @@ urlpatterns = patterns('',
 	# url(r'^$', 'www.views.home', name='home'),
 	# url(r'^www/', include('www.foo.urls')),
 	url(r'^$', 'root.views.home'),
-	url(r'^about/', 'root.views.about'),
+	url(r'^about/$', 'root.views.about'),
 
 	# Admin documentation:
 	url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
@@ -26,6 +26,8 @@ urlpatterns = patterns('',
 	url(r'^comments/', include('django.contrib.comments.urls')),
 
 	# SMS application
-	url(r'^sms/', 'sms.views.index'),
-	url(r'^sms/(?P<contact>\w+)/', 'sms.views.index'),
+	url(r'^sms/$', 'sms.views.index'),
+	url(r'^sms/(?P<contact>\w+)/$', 'sms.views.index'),
+	url(r'^sms/(?P<contact>\w+)/(?P<smsStart>\d+)/(?P<smsEnd>\d+)/$'
+											, 'sms.views.index'),
 )

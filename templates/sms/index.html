@@ -42,5 +42,18 @@
 		</script>
 		<a href="/accounts/logout/"><p><b>Logout</b></p></a>
 	</div>
+	{{ prevLink }}
+	{{ nextLink }}
+	{% if prevLink %}
+	<div id="prevPage" class="nav">
+		<a href="/sms/{{ contact }}/{{ prevLink }}/">&larr;</a>
+	</div>
+	{% endif %}
+	{% if nextLink %}
+	<div id="nextPage" class="nav">
+		<a href="/sms/{{ contact }}/{{ nextLink }}/">&rarr;</a>
+	</div>
+	{% endif %}
+
 {% endblock %}
 {% endif %}
