@@ -27,7 +27,7 @@ urlpatterns = patterns('',
 
 	# SMS application
 	url(r'^sms/$', 'sms.views.index'),
-	url(r'^sms/(?P<contact>\w+)/$', 'sms.views.index'),
-	url(r'^sms/(?P<contact>\w+)/(?P<smsStart>\d+)/(?P<smsEnd>\d+)/$'
+	url(r'^sms/(?P<contactURL>\w+)/$', 'sms.views.index'),
+	url(r'^sms/(?P<contactURL>\w+)/(?P<smsStart>\d+)/(?P<step>\d+)/$'
 											, 'sms.views.index'),
 )

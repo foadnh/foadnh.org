@@ -1,8 +1,41 @@
 {% extends 'sms/base.html' %}
 
-{% block title %}Messages between {{contact}} and Foad{% endblock %}
-{% if count != 0 %}
+{% block title %}Messages between {{ contact }} and Foad{% endblock %}
+{% if smsLen != 0 %}
 {% block content %}
+	{% if prevLink %}
+	<div id="prevPage" class="nav">
+		<a href="/sms/{{ prevLink }}">&larr;</a>
+	</div>
+	{% endif %}
+	{% if nextLink %}
+	<div id="nextPage" class="nav">
+		<a href="/sms/{{ nextLink }}">&rarr;</a>
+	</div>
+	{% endif %}
+
+	<div id="info">
+		<p id="contactNames"><b>{{ contact }} - Foad</b></p>
+		<p>{{ smsLen }} Messages</p>
+		<p>Show names:</p>
+		<div class="slideTwo">	
+			<input type="checkbox" value="None" id="slideTwo" name="check" checked="checked" />
+			<label for="slideTwo"></label>
+		</div>
+		<a href="/accounts/logout/"><p><b>Logout</b></p></a>
+		<a href="#" id="controls-toggle"><p><b>Controls</b></p></a>
+		<div id="controls">
+			<p>Messages per page:</p>
+			<ul>
+<li><a href="/sms/{{ contactURL }}/{{ smsStart }}/50/">50</a></li>
+<li><a href="/sms/{{ contactURL }}/{{ smsStart }}/100/">100</a></li>
+<li><a href="/sms/{{ contactURL }}/{{ smsStart }}/200/">200</a></li>
+<li><a href="/sms/{{ contactURL }}/{{ smsStart }}/500/">500</a></li>
+<li><a href="/sms/{{ contactURL }}/1/{{ smsLen }}/">All</a></li>
+			</ul>
+		</div>
+	</div>
+
 	<div id="whole">
 	{% for sms in messages %}
 		{% if sms.type == '1' %}
@@ -22,38 +55,6 @@
 		</div>
 	{% endfor %}
 	</div>
-	<div id="info">
-		<p id="contactNames"><b>{{ contact }} - Foad</b></p>
-		<p>{{ count }} Messages</p>
-		<p>Show names:</p>
-		<div class="slideTwo">	
-			<input type="checkbox" value="None" id="slideTwo" name="check" checked="checked" />
-			<label for="slideTwo"></label>
-		</div>
-		<script>
-			function ClickFun() {
-				if ($("input:checked").length) {
-					$("h3").css("font-size", "19px");
-				} else {
-					$("h3").css("font-size", "0px");
-				}
-			}
-			$(":checkbox").click(ClickFun);
-		</script>
-		<a href="/accounts/logout/"><p><b>Logout</b></p></a>
-	</div>
-	{{ prevLink }}
-	{{ nextLink }}
-	{% if prevLink %}
-	<div id="prevPage" class="nav">
-		<a href="/sms/{{ contact }}/{{ prevLink }}/">&larr;</a>
-	</div>
-	{% endif %}
-	{% if nextLink %}
-	<div id="nextPage" class="nav">
-		<a href="/sms/{{ contact }}/{{ nextLink }}/">&rarr;</a>
-	</div>
-	{% endif %}
 
 {% endblock %}
 {% endif %}

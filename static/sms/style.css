@@ -13,6 +13,10 @@ body {
 	border-color: black;
 }
 
+#whole:hover #sms {
+	opacity: 0.3;
+}
+
 #sms {
 	margin-bottom: 10px;
 	border-width: 2px;
@@ -26,7 +30,7 @@ body {
 	position: relative;
 	left: -100px;
 	opacity: 1 !important;
-	width: 750px; !important;
+	width: 750px;
 }
 
 #sms:hover p {
@@ -35,14 +39,13 @@ body {
 
 #sms:hover h3 {
 	font-size: 24px !important;
+	transition: font 300ms linear;
+	-moz-transition: font 300ms linear;
+	-webkit-transition: font 300ms linear;
 }
 
 #sms:hover h6 {
 	font-size: 14px !important;
-}
-
-#whole:hover #sms {
-	opacity: 0.3;
 }
 
 .recive {
@@ -74,9 +77,6 @@ body {
 	padding-right: 10px;
 }
 
-#main {
-}
-
 #sms p {
 	margin-left: 10px;
 	margin-right: 10px;
@@ -89,7 +89,6 @@ h3 {
 
 .send h3 {
 	text-align: right;
-	
 }
 
 h6 {
@@ -107,6 +106,9 @@ h6 {
 .send h6 {
 	text-align: right;
 }
+
+/*			end of NAVIGATION				*/
+/*			INFORMATION						*/
 
 #info {
 	opacity: 0.1;
@@ -149,6 +151,26 @@ h6 {
 input[type=checkbox] {
 	visibility: hidden;
 }
+
+/*			end of INFORMATION				*/
+/*			INFORMATION > CONTROLS			*/
+
+div#controls {
+	display: none;
+}
+
+#controls ul {
+	list-style-type: none;
+	padding: 0;
+	text-align: center;
+}
+
+#controls li {
+	display: inline;
+}
+
+/*			end of INFORMATION > CONTROLS	*/
+/*			end of INFORMATION > CONTROLS	*/
 
 .slideTwo {
 	width: 80px;
@@ -243,6 +265,9 @@ input[type=checkbox] {
 	background: #00bf00;
 }
 
+/*			end of NAVIGATION				*/
+/*			NAVIGATION						*/
+
 div.nav {
 	position: fixed;
 	top: 50%;
@@ -266,8 +291,12 @@ div.nav {
 	top: -60px;
 	text-shadow: 4px 4px #000;
 	opacity:0.6;
+	transition: opacity 300ms linear;
+	-moz-transition: opacity 300ms linear;
+	-webkit-transition: opacity 300ms linear;
 }
 
 .nav a:hover {
 	opacity:1;
 }
+/*			end of NAVIGATION				*/
