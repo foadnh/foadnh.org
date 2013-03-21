@@ -2,13 +2,14 @@ from lxml import etree
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 from django.shortcuts import render_to_response
+from projectroot import projectRoot
 
 @login_required
 def index(request, contact='Ava', smsStart='1', smsEnd='50', step = 50):
 	contact = contact.replace('_', ' ')
 	smsStart = int(smsStart) - 1 
 	smsEnd = int(smsEnd)
-	tree = etree.parse('sms/sms.xml')
+	tree = etree.parse(projectRoot + 'sms/sms.xml')
 	root = tree.getroot()
 	ava = root.findall("*[@contact_name='"+contact+"']")
 	messages = [{

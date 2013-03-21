@@ -9,3 +9,4 @@ local_settings.py
 /static/admin/
 /static/zinnia/
 sms/sms.xml
+sms/projectroot.py
