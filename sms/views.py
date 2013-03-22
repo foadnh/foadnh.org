@@ -15,10 +15,11 @@ def index(request, contactURL='Ava', smsStart='1', step='50'):
 	root = tree.getroot()
 	xmlMessages = root.findall("*[@contact_name='"+contact+"']")
 	messages = [{
-		'body': sms.attrib['body'],
-		'date': sms.attrib['readable_date'],
-		'type': sms.attrib['type']
-		} for sms in xmlMessages[smsStart:smsEnd]]
+		'body': xmlMessages[i].attrib['body'],
+		'date': xmlMessages[i].attrib['readable_date'],
+		'type': xmlMessages[i].attrib['type'],
+		'index': i + 1
+		} for i in range(smsStart,smsEnd)]
 	
 	smsLen = len(xmlMessages)
 

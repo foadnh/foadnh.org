@@ -50,7 +50,9 @@
 				<h3 id="names">Foad</h3>
 		{% endif %}
 				<p>{{ sms.body }}</p>
-				<h6>{{ sms.date }}</h6>
+				<a href="/sms/{{ contactURL }}/{{ sms.index }}/1/" class="date">
+					<h6>{{ sms.date }}</h6>
+				</a>
 			</div>
 		</div>
 	{% endfor %}
