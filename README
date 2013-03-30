@@ -7,3 +7,8 @@ For Blog you need to have django-blog-zinnia and zinnia-theme-html5.
 You can easily install them with pip or easy_install.
 
 For SMS application you need lxml package.
+
+This Project have a filemanager with django-filer.
+You need to install it with pip or easy_install.
+Also you have to include these in www/settings.py:
+'easy_thumbnails', 'mptt', 'filer'
